@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+                              <!--cách 1 làm bằng js-->
+<script>
+    var canNang = +prompt('Hãy nhập số cân nặng của ngài bằng kg-- VD:65');
+    var chieuCao = +prompt('Hãy nhập chiều cao của ngài bằng mét--VD:1.6');
+    var bmi = canNang / (chieuCao * chieuCao)
+    if (bmi < 18) {
+        alert('Ngài quá gầy---'+"Chỉ số Bmi là:"+bmi)
+    } else if (bmi < 25) {
+        alert('Ngài đẹp trai đấy---'+"Chỉ số Bmi là:"+bmi)
+    } else if (bmi < 35) {
+        alert('Ngài thừa cân rồi---'+"Chỉ số Bmi là:"+bmi)
+    } else
+        alert('Ngài béo phì rồi---'+"Chỉ số Bmi là:"+bmi)
+</script>
+                               <!--Cách 2 làm bằng HTML-->
+<label> Hãy nhập số cân nặng của ngài bằng kg-- VD:65</label> <br> <br>
+<input type="text" id="nhapKg"> <br> <br>
+<label> Hãy nhập chiều cao của ngài bằng mét--VD:1.6</label> <br><br>
+<input type="text"id="nhapM"> <br><br>
+<button onclick="kiemTra()">Tính BMI</button>
+<h3 id="kq1"></h3>
+<script>
+    function kiemTra() {
+        let canNang = document.getElementById('nhapKg').value
+        let chieuCao = document.getElementById('nhapM').value
+        let bmi = canNang/(chieuCao*chieuCao)
+        let ketQua = 0
+        if (bmi < 18) {
+         ketQua  =  'Ngài quá gầy'
+        } else if (bmi < 25) {
+           ketQua ='Ngài đẹp trai đấy'
+        } else if (bmi < 35) {
+             ketQua='Ngài thừa cân rồi'
+        } else
+             ketQua= 'Ngài béo phì rồi'
+        document.getElementById('kq1').innerHTML=ketQua + "----"+"Chỉ số Bmi là:"+bmi
+    }
+
+</script>
+</body>
+</html>
